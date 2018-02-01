@@ -1,3 +1,5 @@
+require 'sshkit/interactive'
+
 module DockerCompose
   module Interactive
     require_relative './interactive/instance'
@@ -30,9 +32,7 @@ module DockerCompose
     def self.execute_local_or_remote_interactive(cmd)
       puts "runnig: docker-compose #{cmd}"
       if local_stage?
-        run_locally do
-          execute "docker-compose #{cmd}"
-        end
+        system "docker-compose #{cmd}"
       else
         on roles fetch(:docker_compose_interactive_roles) do |host|
           run_interactively host do
