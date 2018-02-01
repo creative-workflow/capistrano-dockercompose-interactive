@@ -1,4 +1,5 @@
 require 'sshkit/interactive'
+require_relative '../tasks/default.rb'
 
 module DockerCompose
   module Interactive
