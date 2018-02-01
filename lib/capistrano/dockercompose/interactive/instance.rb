@@ -14,6 +14,10 @@ class Instance
     @config = YAML.load(raw_config)
   end
 
+  def execute(cmd, capture = false)
+    execute_compose_command(cmd, capture)
+  end
+
   def execute_compose_command(cmd, capture = false)
     project = @project.empty? ? "" : "-p #{@project}"
     file    = @file.empty?    ? "" : "--file #{@file}"
