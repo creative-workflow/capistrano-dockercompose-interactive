@@ -4,8 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name        = 'capistrano-dockercompose-interactive'
-  spec.version     = '0.0.5'
-  spec.date        = '2018-02-01'
+  spec.version     = '0.0.6'
+  spec.date        = '2018-02-03'
   spec.summary     = 'Helps managing docker compose excution on local or remote with inetractive shell support'
   spec.description = spec.summary
   spec.authors     = ['Tom Hanoldt']

@@ -1,9 +1,9 @@
 require 'sshkit/interactive'
 require_relative '../tasks/default.rb'
+require_relative './interactive/instance'
 
 module DockerCompose
   module Interactive
-    require_relative './interactive/instance'
 
     def self.instance(file='', project='')
       Instance.new(file, project)

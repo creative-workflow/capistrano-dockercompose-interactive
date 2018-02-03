@@ -33,6 +33,9 @@ require 'capistrano/dockercompose/interactive'
 
 ## Changes
 
+### Version 0.0.2
+  * use clean modiule namespaces
+  
 ### Version 0.0.1
   * initial release
 
