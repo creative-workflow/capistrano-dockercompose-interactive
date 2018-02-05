@@ -34,6 +34,50 @@ module DockerCompose
       def service(name)
         Service.new(self, name, config()['services'][name])
       end
+
+      def isup?
+        count = execute_compose_command('ps -q | wc -l', capture = true)
+        count.to_i
+      rescue
+        false
+      end
+
+      # starts or restarts a docker compose
+      def start_or_restart
+        if isup?
+          restart()
+        else
+          up()
+        end
+      end
+
+      def stop(args='')
+        execute_compose_command("stop #{args}")
+      end
+
+      def down(args='')
+        execute_compose_command("down #{args}")
+      end
+
+      def up(args='-d')
+        execute_compose_command("up #{args}")
+      end
+
+      def start(args='')
+        execute_compose_command("start #{args}")
+      end
+
+      def restart(args='')
+        execute_compose_command("restart #{args}")
+      end
+
+      def build(args='')
+        execute_compose_command("build #{args}")
+      end
+
+      def pull(args='')
+        execute_compose_command("pull #{args}")
+      end
     end
   end
 end

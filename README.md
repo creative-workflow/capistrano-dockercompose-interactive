@@ -33,9 +33,12 @@ require 'capistrano/dockercompose/interactive'
 
 ## Changes
 
+### Version 0.0.7
+  * add `isup?`, `satrt`, `stop`, `restart`, `up`, `down`, `build`, `pull`, `start_or_restart` to `DockerCompose::Interactive::Instance`
+
 ### Version 0.0.2
   * use clean modiule namespaces
-  
+
 ### Version 0.0.1
   * initial release
 
