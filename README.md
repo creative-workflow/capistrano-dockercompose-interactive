@@ -33,6 +33,10 @@ require 'capistrano/dockercompose/interactive'
 
 ## Changes
 
+### Version 0.0.8
+  * fix `isup?` boolean behaviour
+  * add `DockerCompose::Interactive::Instance::count_container`
+
 ### Version 0.0.7
   * add `isup?`, `satrt`, `stop`, `restart`, `up`, `down`, `build`, `pull`, `start_or_restart` to `DockerCompose::Interactive::Instance`
 

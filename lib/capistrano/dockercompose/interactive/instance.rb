@@ -36,10 +36,16 @@ module DockerCompose
       end
 
       def isup?
+        count_container > 0
+      rescue
+        false
+      end
+
+      def count_container
         count = execute_compose_command('ps -q | wc -l', capture = true)
         count.to_i
       rescue
-        false
+        0
       end
 
       # starts or restarts a docker compose
